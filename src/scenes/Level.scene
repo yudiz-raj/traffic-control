@@ -1,0 +1,129 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "a684fff9-798e-4d38-8e7a-c5c0568b78e3",
+            "label": "container_background",
+            "y": -1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "64be75c6-ac85-4937-9506-07fb3b39c97e",
+                    "label": "background",
+                    "texture": {
+                        "key": "level-1-background"
+                    },
+                    "x": 960,
+                    "y": 542,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "20bd116a-f77f-4aba-a9f6-93e7d989cb55",
+            "label": "container_turns",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "9344e7f0-82dc-45a9-8266-d9ebeed21c79",
+                    "label": "rectangle_downSide",
+                    "useGameObjectName": true,
+                    "x": 818,
+                    "y": 187,
+                    "isFilled": true,
+                    "width": 50,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "4c1ccee6-fe2d-464f-886f-6947581365a1",
+                    "label": "rectangle_leftSide",
+                    "useGameObjectName": true,
+                    "x": 961,
+                    "y": 346,
+                    "isFilled": true,
+                    "width": 50,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "53ab5352-3cf5-4c74-8c14-49f1e84b9a0a",
+                    "label": "rectangle_rightSide",
+                    "useGameObjectName": true,
+                    "x": 963,
+                    "y": 738,
+                    "isFilled": true,
+                    "width": 50,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "3cc198f9-b7a3-454a-bc4c-09ff46dd8df1",
+                    "label": "rectangle_topSide",
+                    "useGameObjectName": true,
+                    "x": 1106,
+                    "y": 899,
+                    "isFilled": true,
+                    "width": 50,
+                    "height": 50
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "17f9e7bc-92ef-4215-9a62-025b63614948",
+            "label": "container_cars",
+            "scope": "CLASS"
+        },
+        {
+            "type": "Container",
+            "id": "2e4913ee-9fa6-4c9a-a069-645e06b14e76",
+            "label": "container_tunnel",
+            "y": 1,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "b15eb97a-3e9c-4359-9735-0c234d115a39",
+                    "label": "tunnel_2",
+                    "texture": {
+                        "key": "tunnel-2"
+                    },
+                    "x": -55,
+                    "y": 518,
+                    "scaleX": 1.2,
+                    "scaleY": 1.2
+                },
+                {
+                    "type": "Image",
+                    "id": "ed621cb2-fd81-41ec-910c-11e967f8b5ab",
+                    "label": "tunnel_1",
+                    "texture": {
+                        "key": "tunnel-1"
+                    },
+                    "x": 1885,
+                    "y": 890,
+                    "scaleX": 1.1
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

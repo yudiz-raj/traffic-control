@@ -1,0 +1,116 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/blast.png",
+                "type": "image",
+                "key": "blast"
+            },
+            {
+                "url": "assets/images/spritesheet/cars.png",
+                "frameConfig": {
+                    "frameWidth": 125,
+                    "frameHeight": 166,
+                    "startFrame": 0,
+                    "endFrame": 11,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "cars"
+            },
+            {
+                "url": "src/scripts/GameManager.js",
+                "type": "script",
+                "key": "GameManager"
+            },
+            {
+                "url": "src/scripts/InputManager.js",
+                "type": "script",
+                "key": "InputManager"
+            },
+            {
+                "url": "assets/images/level-1.png",
+                "type": "image",
+                "key": "level-1"
+            },
+            {
+                "url": "assets/images/level-1-background.jpg",
+                "type": "image",
+                "key": "level-1-background"
+            },
+            {
+                "url": "assets/images/level-2.png",
+                "type": "image",
+                "key": "level-2"
+            },
+            {
+                "url": "assets/images/level-2-background.jpg",
+                "type": "image",
+                "key": "level-2-background"
+            },
+            {
+                "url": "assets/images/level-3.png",
+                "type": "image",
+                "key": "level-3"
+            },
+            {
+                "url": "assets/images/level-3-background.jpg",
+                "type": "image",
+                "key": "level-3-background"
+            },
+            {
+                "url": "assets/images/level-4-background.jpg",
+                "type": "image",
+                "key": "level-4-background"
+            },
+            {
+                "url": "assets/images/level-5-background.jpg",
+                "type": "image",
+                "key": "level-5-background"
+            },
+            {
+                "url": "src/scripts/SocketManager.js",
+                "type": "script",
+                "key": "SocketManager"
+            },
+            {
+                "url": "src/scripts/SoundManager.js",
+                "type": "script",
+                "key": "SoundManager"
+            },
+            {
+                "url": "assets/images/splash.jpg",
+                "type": "image",
+                "key": "splash"
+            },
+            {
+                "url": "assets/images/splash_blur.jpg",
+                "type": "image",
+                "key": "splash_blur"
+            },
+            {
+                "url": "assets/images/tunnel-1.png",
+                "type": "image",
+                "key": "tunnel-1"
+            },
+            {
+                "url": "assets/images/tunnel-2.png",
+                "type": "image",
+                "key": "tunnel-2"
+            },
+            {
+                "url": "src/scripts/TweenManager.js",
+                "type": "script",
+                "key": "TweenManager"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
