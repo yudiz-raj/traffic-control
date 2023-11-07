@@ -94,29 +94,31 @@ class Level extends Phaser.Scene {
 
 		this.oGameManager.levelOne();
 		this.aCarPosition = this.oGameManager.aCarPotision;
-		const car = this.carGroup.create(this.aCarPosition[2].x, this.aCarPosition[2].y, 'cars', 5).setAngle(this.aCarPosition[2].angle);
+		const car = this.carGroup.create(this.aCarPosition[2].x, this.aCarPosition[2].y, 'car').setAngle(this.aCarPosition[2].angle);
+		car.setScale(0.3);
 		car.setVelocity(this.aCarPosition[2].velocityX, this.aCarPosition[2].velocityY);
-		car.body.setSize(140, 90);
+		car.body.setSize(440, 170);
 		this.container_cars.add(car);
 		let nRandomTime = 2000;
 
 		setInterval(() => {
 			let nRandomCar = Phaser.Math.Between(0, 4);
 			let ncar = Phaser.Math.Between(0, 11);
-			const car = this.carGroup.create(this.aCarPosition[nRandomCar].x, this.aCarPosition[nRandomCar].y, 'cars', ncar).setAngle(this.aCarPosition[nRandomCar].angle);
+			const car = this.carGroup.create(this.aCarPosition[nRandomCar].x, this.aCarPosition[nRandomCar].y, 'car').setAngle(this.aCarPosition[nRandomCar].angle);
+			car.setScale(0.3);
 			car.body.setVelocity(this.aCarPosition[nRandomCar].velocityX, this.aCarPosition[nRandomCar].velocityY);
 			switch (car.angle) {
 				case 0:
-					car.body.setSize(90, 140);
+					car.body.setSize(170, 440);
 					break;
 				case 90:
-					car.body.setSize(140, 90);
+					car.body.setSize(440, 170);
 					break;
 				case -90:
-					car.body.setSize(140, 90);
+					car.body.setSize(440, 170);
 					break;
 				case -180:
-					car.body.setSize(90, 140);
+					car.body.setSize(170, 440);
 					break;
 				default:
 					break;
@@ -133,10 +135,16 @@ class Level extends Phaser.Scene {
 		this.container_turns.list.forEach((turn) => {
 			this.turnGroup.add(turn);
 		});
-		this.physics.add.collider(this.carGroup, this.carGroup, () => {
-			this.scene.pause("Level");
+		this.physics.add.collider(this.carGroup, this.carGroup, (car1, car2) => {
+			this.oTweenManager.turnTween.stop();
+			this.turn.destroy();
+			this.physics.pause();
+			this.add.image((car1.x + car2.x) / 2, (car1.y + car2.y) / 2, "blast");
+			setTimeout(() => {
+				this.scene.restart();
+			}, 3000);
 		});
-		this.physics.add.overlap(this.carGroup, this.turnGroup, (car, turn) => {
+		this.turn = this.physics.add.overlap(this.carGroup, this.turnGroup, (car, turn) => {
 			switch (turn.name) {
 				case "rectangle_topSide":
 					this.oTweenManager.carTurnAnimation(car, 0);
@@ -155,33 +163,6 @@ class Level extends Phaser.Scene {
 			}
 		});
 	}
-	// update() {
-	// 	for (let i = 0; i < this.container_cars.list.length; i++) {
-	// 		switch (this.container_cars.list[i].angle) {
-	// 			case 0:
-	// 				this.container_cars.list[i].y -= 5;
-	// 				this.container_cars.list[i].body.setSize(80, 140);
-	// 				break;
-	// 			case 90:
-	// 				this.container_cars.list[i].x += 5;
-	// 				this.container_cars.list[i].body.setSize(140, 80);
-	// 				break;
-	// 			case -90:
-	// 				this.container_cars.list[i].x -= 5;
-	// 				this.container_cars.list[i].body.setSize(140, 80);
-	// 				break;
-	// 			case -180:
-	// 				this.container_cars.list[i].y += 5;
-	// 				this.container_cars.list[i].body.setSize(80, 140);
-	// 				break;
-	// 			default:
-	// 				break;
-	// 		}
-	// 	}
-	// this.container_cars.list.forEach((car) => {
-	// })
-	// }
-
 	/* END-USER-CODE */
 }
 
