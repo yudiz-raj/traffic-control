@@ -15,7 +15,7 @@ class Level extends Phaser.Scene {
 	editorCreate() {
 
 		// container_background
-		const container_background = this.add.container(0, -1);
+		const container_background = this.add.container(0, 0);
 
 		// background
 		const background = this.add.image(960, 542, "level-1-background");
@@ -29,24 +29,28 @@ class Level extends Phaser.Scene {
 		// rectangle_downSide
 		const rectangle_downSide = this.add.rectangle(818, 187, 50, 50);
 		rectangle_downSide.name = "rectangle_downSide";
+		rectangle_downSide.visible = false;
 		rectangle_downSide.isFilled = true;
 		container_turns.add(rectangle_downSide);
 
 		// rectangle_leftSide
-		const rectangle_leftSide = this.add.rectangle(961, 346, 50, 50);
+		const rectangle_leftSide = this.add.rectangle(961, 333, 50, 50);
 		rectangle_leftSide.name = "rectangle_leftSide";
+		rectangle_leftSide.visible = false;
 		rectangle_leftSide.isFilled = true;
 		container_turns.add(rectangle_leftSide);
 
 		// rectangle_rightSide
-		const rectangle_rightSide = this.add.rectangle(963, 738, 50, 50);
+		const rectangle_rightSide = this.add.rectangle(963, 753, 50, 50);
 		rectangle_rightSide.name = "rectangle_rightSide";
+		rectangle_rightSide.visible = false;
 		rectangle_rightSide.isFilled = true;
 		container_turns.add(rectangle_rightSide);
 
 		// rectangle_topSide
 		const rectangle_topSide = this.add.rectangle(1106, 899, 50, 50);
 		rectangle_topSide.name = "rectangle_topSide";
+		rectangle_topSide.visible = false;
 		rectangle_topSide.isFilled = true;
 		container_turns.add(rectangle_topSide);
 
@@ -67,8 +71,14 @@ class Level extends Phaser.Scene {
 		tunnel_1.scaleX = 1.1;
 		container_tunnel.add(tunnel_1);
 
+		// arrow
+		const arrow = this.add.image(1835, 480, "arrow");
+		arrow.scaleX = 0.3;
+		arrow.scaleY = 0.3;
+
 		this.container_turns = container_turns;
 		this.container_cars = container_cars;
+		this.arrow = arrow;
 
 		this.events.emit("scene-awake");
 	}
@@ -77,6 +87,8 @@ class Level extends Phaser.Scene {
 	container_turns;
 	/** @type {Phaser.GameObjects.Container} */
 	container_cars;
+	/** @type {Phaser.GameObjects.Image} */
+	arrow;
 
 	/* START-USER-CODE */
 
@@ -92,6 +104,7 @@ class Level extends Phaser.Scene {
 		this.carGroup = this.physics.add.group();
 		this.turnGroup = this.physics.add.group();
 
+		this.arrow.setVisible(false);
 		this.oGameManager.levelOne();
 		this.aCarPosition = this.oGameManager.aCarPotision;
 		const car = this.carGroup.create(this.aCarPosition[2].x, this.aCarPosition[2].y, 'car').setAngle(this.aCarPosition[2].angle);
@@ -99,14 +112,22 @@ class Level extends Phaser.Scene {
 		car.setVelocity(this.aCarPosition[2].velocityX, this.aCarPosition[2].velocityY);
 		car.body.setSize(440, 170);
 		this.container_cars.add(car);
+		this.arrow.setPosition(this.aCarPosition[2].arrowX, this.aCarPosition[2].arrowY).setVisible(true).setAngle(car.angle);
+		setTimeout(() => {
+			this.arrow.setVisible(false);
+		}, 500);
 		let nRandomTime = 2000;
 
-		setInterval(() => {
+		this.carInterval = setInterval(() => {
 			let nRandomCar = Phaser.Math.Between(0, 4);
 			let ncar = Phaser.Math.Between(0, 11);
 			const car = this.carGroup.create(this.aCarPosition[nRandomCar].x, this.aCarPosition[nRandomCar].y, 'car').setAngle(this.aCarPosition[nRandomCar].angle);
 			car.setScale(0.3);
 			car.body.setVelocity(this.aCarPosition[nRandomCar].velocityX, this.aCarPosition[nRandomCar].velocityY);
+			this.arrow.setPosition(this.aCarPosition[nRandomCar].arrowX, this.aCarPosition[nRandomCar].arrowY).setVisible(true).setAngle(car.angle);
+			setTimeout(() => {
+				this.arrow.setVisible(false);
+			}, 500);
 			switch (car.angle) {
 				case 0:
 					car.body.setSize(170, 440);
@@ -124,11 +145,6 @@ class Level extends Phaser.Scene {
 					break;
 			}
 			this.container_cars.add(car);
-			this.container_cars.list.forEach((car) => {
-				if (car.x <= -802 || car.x >= 2936 || car.y <= -290 || car.y >= 1360) {
-					car.destroy();
-				}
-			});
 			this.oInputManager.setCarSpeed();
 			nRandomTime = Phaser.Math.Between(1500, 3000);
 		}, nRandomTime);
@@ -136,13 +152,15 @@ class Level extends Phaser.Scene {
 			this.turnGroup.add(turn);
 		});
 		this.physics.add.collider(this.carGroup, this.carGroup, (car1, car2) => {
+			this.add.image((car1.x + car2.x) / 2, (car1.y + car2.y) / 2, "blast");
+			clearInterval(this.carInterval);
 			this.oTweenManager.turnTween.stop();
 			this.turn.destroy();
-			this.physics.pause();
-			this.add.image((car1.x + car2.x) / 2, (car1.y + car2.y) / 2, "blast");
+			this.scene.pause();
 			setTimeout(() => {
-				this.scene.restart();
-			}, 3000);
+				this.scene.stop("Level");
+				this.scene.start("Result");
+			}, 2000);
 		});
 		this.turn = this.physics.add.overlap(this.carGroup, this.turnGroup, (car, turn) => {
 			switch (turn.name) {
@@ -160,6 +178,13 @@ class Level extends Phaser.Scene {
 					break;
 				default:
 					break;
+			}
+		});
+	}
+	update() {
+		this.container_cars.list.forEach((car) => {
+			if ((car.angle === 90 && car.x >= 2000) || (car.angle === -90 && car.x <= 177)) {
+				car.destroy();
 			}
 		});
 	}

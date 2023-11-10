@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/arrow.png",
+                "type": "image",
+                "key": "arrow"
+            },
+            {
                 "url": "assets/images/blast.png",
                 "type": "image",
                 "key": "blast"
@@ -73,6 +78,16 @@
                 "url": "assets/images/level-5-background.jpg",
                 "type": "image",
                 "key": "level-5-background"
+            },
+            {
+                "url": "assets/images/replay-button.png",
+                "type": "image",
+                "key": "replay-button"
+            },
+            {
+                "url": "src/scenes/Result.js",
+                "type": "sceneFile",
+                "key": "Result"
             },
             {
                 "url": "src/scripts/SocketManager.js",

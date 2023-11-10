@@ -13,7 +13,6 @@
             "type": "Container",
             "id": "a684fff9-798e-4d38-8e7a-c5c0568b78e3",
             "label": "container_background",
-            "y": -1,
             "list": [
                 {
                     "type": "Image",
@@ -42,6 +41,7 @@
                     "useGameObjectName": true,
                     "x": 818,
                     "y": 187,
+                    "visible": false,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -52,7 +52,8 @@
                     "label": "rectangle_leftSide",
                     "useGameObjectName": true,
                     "x": 961,
-                    "y": 346,
+                    "y": 333,
+                    "visible": false,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -63,7 +64,8 @@
                     "label": "rectangle_rightSide",
                     "useGameObjectName": true,
                     "x": 963,
-                    "y": 738,
+                    "y": 753,
+                    "visible": false,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -75,6 +77,7 @@
                     "useGameObjectName": true,
                     "x": 1106,
                     "y": 899,
+                    "visible": false,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -117,6 +120,19 @@
                     "scaleX": 1.1
                 }
             ]
+        },
+        {
+            "type": "Image",
+            "id": "e3f3e733-5841-4921-96a0-3c50a7461e2c",
+            "label": "arrow",
+            "scope": "CLASS",
+            "texture": {
+                "key": "arrow"
+            },
+            "x": 1835,
+            "y": 480,
+            "scaleX": 0.3,
+            "scaleY": 0.3
         }
     ],
     "plainObjects": [],
