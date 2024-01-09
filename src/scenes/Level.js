@@ -19,38 +19,32 @@ class Level extends Phaser.Scene {
 
 		// background
 		const background = this.add.image(960, 542, "level-1-background");
-		background.scaleX = 1.5;
-		background.scaleY = 1.5;
 		container_background.add(background);
 
 		// container_turns
 		const container_turns = this.add.container(0, 0);
 
 		// rectangle_downSide
-		const rectangle_downSide = this.add.rectangle(818, 187, 50, 50);
+		const rectangle_downSide = this.add.rectangle(729, 132, 50, 50);
 		rectangle_downSide.name = "rectangle_downSide";
-		rectangle_downSide.visible = false;
 		rectangle_downSide.isFilled = true;
 		container_turns.add(rectangle_downSide);
 
 		// rectangle_leftSide
-		const rectangle_leftSide = this.add.rectangle(961, 333, 50, 50);
+		const rectangle_leftSide = this.add.rectangle(1407, 226, 50, 50);
 		rectangle_leftSide.name = "rectangle_leftSide";
-		rectangle_leftSide.visible = false;
 		rectangle_leftSide.isFilled = true;
 		container_turns.add(rectangle_leftSide);
 
 		// rectangle_rightSide
-		const rectangle_rightSide = this.add.rectangle(963, 753, 50, 50);
+		const rectangle_rightSide = this.add.rectangle(1435, 397, 50, 50);
 		rectangle_rightSide.name = "rectangle_rightSide";
-		rectangle_rightSide.visible = false;
 		rectangle_rightSide.isFilled = true;
 		container_turns.add(rectangle_rightSide);
 
 		// rectangle_topSide
-		const rectangle_topSide = this.add.rectangle(1106, 899, 50, 50);
+		const rectangle_topSide = this.add.rectangle(1381, 967, 50, 50);
 		rectangle_topSide.name = "rectangle_topSide";
-		rectangle_topSide.visible = false;
 		rectangle_topSide.isFilled = true;
 		container_turns.add(rectangle_topSide);
 
@@ -58,18 +52,7 @@ class Level extends Phaser.Scene {
 		const container_cars = this.add.container(0, 0);
 
 		// container_tunnel
-		const container_tunnel = this.add.container(0, 1);
-
-		// tunnel_2
-		const tunnel_2 = this.add.image(-55, 518, "tunnel-2");
-		tunnel_2.scaleX = 1.2;
-		tunnel_2.scaleY = 1.2;
-		container_tunnel.add(tunnel_2);
-
-		// tunnel_1
-		const tunnel_1 = this.add.image(1885, 890, "tunnel-1");
-		tunnel_1.scaleX = 1.1;
-		container_tunnel.add(tunnel_1);
+		this.add.container(0, 1);
 
 		// arrow
 		const arrow = this.add.image(1835, 480, "arrow");
@@ -107,10 +90,10 @@ class Level extends Phaser.Scene {
 		this.arrow.setVisible(false);
 		this.oGameManager.levelOne();
 		this.aCarPosition = this.oGameManager.aCarPotision;
-		const car = this.carGroup.create(this.aCarPosition[2].x, this.aCarPosition[2].y, 'car').setAngle(this.aCarPosition[2].angle);
-		car.setScale(0.3);
+		const car = this.carGroup.create(this.aCarPosition[2].x, this.aCarPosition[2].y, 'car-1').setAngle(this.aCarPosition[2].angle);
 		car.setVelocity(this.aCarPosition[2].velocityX, this.aCarPosition[2].velocityY);
-		car.body.setSize(440, 170);
+		car.body.setSize(140, 70);
+		car.body.setOffset(0, 80);
 		this.container_cars.add(car);
 		this.arrow.setPosition(this.aCarPosition[2].arrowX, this.aCarPosition[2].arrowY).setVisible(true).setAngle(car.angle);
 		setTimeout(() => {
@@ -119,10 +102,9 @@ class Level extends Phaser.Scene {
 		let nRandomTime = 2000;
 
 		this.carInterval = setInterval(() => {
-			let nRandomCar = Phaser.Math.Between(0, 4);
-			let ncar = Phaser.Math.Between(0, 11);
-			const car = this.carGroup.create(this.aCarPosition[nRandomCar].x, this.aCarPosition[nRandomCar].y, 'car').setAngle(this.aCarPosition[nRandomCar].angle);
-			car.setScale(0.3);
+			let nRandomCar = Phaser.Math.Between(0, 5);
+			let ncar = Phaser.Math.Between(1, 3);
+			const car = this.carGroup.create(this.aCarPosition[nRandomCar].x, this.aCarPosition[nRandomCar].y, `car-${ncar}`).setAngle(this.aCarPosition[nRandomCar].angle);
 			car.body.setVelocity(this.aCarPosition[nRandomCar].velocityX, this.aCarPosition[nRandomCar].velocityY);
 			this.arrow.setPosition(this.aCarPosition[nRandomCar].arrowX, this.aCarPosition[nRandomCar].arrowY).setVisible(true).setAngle(car.angle);
 			setTimeout(() => {
@@ -130,16 +112,61 @@ class Level extends Phaser.Scene {
 			}, 500);
 			switch (car.angle) {
 				case 0:
-					car.body.setSize(170, 440);
-					break;
-				case 90:
-					car.body.setSize(440, 170);
+					if (car.texture.key == 'car-1') {
+						car.body.setSize(70, 140);
+						car.body.setOffset(10, 50);
+					}
+					if (car.texture.key == 'car-2') {
+						car.body.setSize(70, 160);
+						car.body.setOffset(15, 150);
+					}
+					if (car.texture.key == 'car-3') {
+						car.body.setSize(70, 160);
+						car.body.setOffset(15, 80);
+					}
 					break;
 				case -90:
-					car.body.setSize(440, 170);
+					if (car.texture.key == 'car-1') {
+						console.log("car");
+						car.body.setSize(140, 70);
+						car.body.setOffset(0, 80);
+					}
+					if (car.texture.key == 'car-2') {
+						car.body.setSize(160, 70);
+						car.body.setOffset(50, 145);
+					}
+					if (car.texture.key == 'car-3') {
+						car.body.setSize(160, 70);
+						car.body.setOffset(0, 100);
+					}
+					break;
+				case 90:
+					if (car.texture.key == 'car-1') {
+						car.body.setSize(140, 70);
+						car.body.setOffset(-30, 65);
+					}
+					if (car.texture.key == 'car-2') {
+						car.body.setSize(160, 70);
+						car.body.setOffset(-80, 120);
+					}
+					if (car.texture.key == 'car-3') {
+						car.body.setSize(160, 70);
+						car.body.setOffset(-50, 90);
+					}
 					break;
 				case -180:
-					car.body.setSize(170, 440);
+					if (car.texture.key == 'car-1') {
+						car.body.setSize(70, 140);
+						car.body.setOffset(25, 25);
+					}
+					if (car.texture.key == 'car-2') {
+						car.body.setSize(70, 160);
+						car.body.setOffset(45, 20);
+					}
+					if (car.texture.key == 'car-3') {
+						car.body.setSize(70, 160);
+						car.body.setOffset(30, 20);
+					}
 					break;
 				default:
 					break;
@@ -154,8 +181,9 @@ class Level extends Phaser.Scene {
 		this.physics.add.collider(this.carGroup, this.carGroup, (car1, car2) => {
 			this.add.image((car1.x + car2.x) / 2, (car1.y + car2.y) / 2, "blast");
 			clearInterval(this.carInterval);
-			this.oTweenManager.turnTween.stop();
-			this.turn.destroy();
+			if (this.oTweenManager.turnTween) {
+				this.oTweenManager.turnTween.stop();
+			}
 			this.scene.pause();
 			setTimeout(() => {
 				this.scene.stop("Level");

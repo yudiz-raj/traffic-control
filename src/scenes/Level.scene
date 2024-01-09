@@ -22,9 +22,7 @@
                         "key": "level-1-background"
                     },
                     "x": 960,
-                    "y": 542,
-                    "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "y": 542
                 }
             ]
         },
@@ -39,9 +37,8 @@
                     "id": "9344e7f0-82dc-45a9-8266-d9ebeed21c79",
                     "label": "rectangle_downSide",
                     "useGameObjectName": true,
-                    "x": 818,
-                    "y": 187,
-                    "visible": false,
+                    "x": 729,
+                    "y": 132,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -51,9 +48,8 @@
                     "id": "4c1ccee6-fe2d-464f-886f-6947581365a1",
                     "label": "rectangle_leftSide",
                     "useGameObjectName": true,
-                    "x": 961,
-                    "y": 333,
-                    "visible": false,
+                    "x": 1407,
+                    "y": 226,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -63,9 +59,8 @@
                     "id": "53ab5352-3cf5-4c74-8c14-49f1e84b9a0a",
                     "label": "rectangle_rightSide",
                     "useGameObjectName": true,
-                    "x": 963,
-                    "y": 753,
-                    "visible": false,
+                    "x": 1435,
+                    "y": 397,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -75,9 +70,8 @@
                     "id": "3cc198f9-b7a3-454a-bc4c-09ff46dd8df1",
                     "label": "rectangle_topSide",
                     "useGameObjectName": true,
-                    "x": 1106,
-                    "y": 899,
-                    "visible": false,
+                    "x": 1381,
+                    "y": 967,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -94,32 +88,7 @@
             "type": "Container",
             "id": "2e4913ee-9fa6-4c9a-a069-645e06b14e76",
             "label": "container_tunnel",
-            "y": 1,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "b15eb97a-3e9c-4359-9735-0c234d115a39",
-                    "label": "tunnel_2",
-                    "texture": {
-                        "key": "tunnel-2"
-                    },
-                    "x": -55,
-                    "y": 518,
-                    "scaleX": 1.2,
-                    "scaleY": 1.2
-                },
-                {
-                    "type": "Image",
-                    "id": "ed621cb2-fd81-41ec-910c-11e967f8b5ab",
-                    "label": "tunnel_1",
-                    "texture": {
-                        "key": "tunnel-1"
-                    },
-                    "x": 1885,
-                    "y": 890,
-                    "scaleX": 1.1
-                }
-            ]
+            "y": 1
         },
         {
             "type": "Image",
@@ -140,6 +109,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 4
+        "version": 5
     }
 }
