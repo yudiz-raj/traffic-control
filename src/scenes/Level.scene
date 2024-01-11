@@ -39,28 +39,7 @@
                     "useGameObjectName": true,
                     "x": 729,
                     "y": 132,
-                    "isFilled": true,
-                    "width": 50,
-                    "height": 50
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "4c1ccee6-fe2d-464f-886f-6947581365a1",
-                    "label": "rectangle_leftSide",
-                    "useGameObjectName": true,
-                    "x": 1407,
-                    "y": 226,
-                    "isFilled": true,
-                    "width": 50,
-                    "height": 50
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "53ab5352-3cf5-4c74-8c14-49f1e84b9a0a",
-                    "label": "rectangle_rightSide",
-                    "useGameObjectName": true,
-                    "x": 1435,
-                    "y": 397,
+                    "visible": false,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -72,6 +51,31 @@
                     "useGameObjectName": true,
                     "x": 1381,
                     "y": 967,
+                    "visible": false,
+                    "isFilled": true,
+                    "width": 50,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "0a851cd5-7bb3-4d11-aed9-723d350b44e5",
+                    "label": "rectangle_downSide_1",
+                    "useGameObjectName": true,
+                    "x": 729,
+                    "y": 420,
+                    "visible": false,
+                    "isFilled": true,
+                    "width": 50,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "66d3944e-874b-453c-b354-7e430c5b4b2c",
+                    "label": "rectangle_topSide_1",
+                    "useGameObjectName": true,
+                    "x": 1381,
+                    "y": 648,
+                    "visible": false,
                     "isFilled": true,
                     "width": 50,
                     "height": 50
@@ -100,8 +104,7 @@
             },
             "x": 1835,
             "y": 480,
-            "scaleX": 0.3,
-            "scaleY": 0.3
+            "visible": false
         }
     ],
     "plainObjects": [],

@@ -7,27 +7,14 @@
                 "key": "arrow"
             },
             {
+                "url": "assets/images/black.png",
+                "type": "image",
+                "key": "black"
+            },
+            {
                 "url": "assets/images/blast.png",
                 "type": "image",
                 "key": "blast"
-            },
-            {
-                "url": "assets/images/car.png",
-                "type": "image",
-                "key": "car"
-            },
-            {
-                "url": "assets/images/spritesheet/cars.png",
-                "frameConfig": {
-                    "frameWidth": 125,
-                    "frameHeight": 166,
-                    "startFrame": 0,
-                    "endFrame": 11,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "cars"
             },
             {
                 "url": "src/scripts/GameManager.js",
@@ -35,59 +22,19 @@
                 "key": "GameManager"
             },
             {
+                "url": "src/scenes/Home.js",
+                "type": "sceneFile",
+                "key": "Home"
+            },
+            {
                 "url": "src/scripts/InputManager.js",
                 "type": "script",
                 "key": "InputManager"
             },
             {
-                "url": "assets/images/level-1.png",
-                "type": "image",
-                "key": "level-1"
-            },
-            {
-                "url": "assets/images/level-1-background.png",
-                "type": "image",
-                "key": "level-1-background"
-            },
-            {
-                "url": "assets/images/level-2.png",
-                "type": "image",
-                "key": "level-2"
-            },
-            {
-                "url": "assets/images/level-2-background.jpg",
-                "type": "image",
-                "key": "level-2-background"
-            },
-            {
-                "url": "assets/images/level-3.png",
-                "type": "image",
-                "key": "level-3"
-            },
-            {
-                "url": "assets/images/level-3-background.jpg",
-                "type": "image",
-                "key": "level-3-background"
-            },
-            {
-                "url": "assets/images/level-4-background.jpg",
-                "type": "image",
-                "key": "level-4-background"
-            },
-            {
-                "url": "assets/images/level-5-background.jpg",
-                "type": "image",
-                "key": "level-5-background"
-            },
-            {
                 "url": "assets/images/replay-button.png",
                 "type": "image",
                 "key": "replay-button"
-            },
-            {
-                "url": "src/scenes/Result.js",
-                "type": "sceneFile",
-                "key": "Result"
             },
             {
                 "url": "src/scripts/SocketManager.js",
@@ -98,26 +45,6 @@
                 "url": "src/scripts/SoundManager.js",
                 "type": "script",
                 "key": "SoundManager"
-            },
-            {
-                "url": "assets/images/splash.jpg",
-                "type": "image",
-                "key": "splash"
-            },
-            {
-                "url": "assets/images/splash_blur.jpg",
-                "type": "image",
-                "key": "splash_blur"
-            },
-            {
-                "url": "assets/images/tunnel-1.png",
-                "type": "image",
-                "key": "tunnel-1"
-            },
-            {
-                "url": "assets/images/tunnel-2.png",
-                "type": "image",
-                "key": "tunnel-2"
             },
             {
                 "url": "src/scripts/TweenManager.js",

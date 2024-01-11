@@ -1,20 +1,17 @@
 {
-    "id": "04331fb6-ed91-4d74-b6e9-4bfe0fcfb457",
+    "id": "a7d3424d-c892-430e-a97c-9ee0899be9af",
     "sceneType": "SCENE",
     "settings": {
-        "preloadMethodName": "editorPreload",
-        "preloadPackFiles": [
-            "starter-template-basic-typescript/assets/asset-pack.json"
-        ],
+        "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Preload",
+        "sceneKey": "Home",
         "borderWidth": 1920,
         "borderHeight": 1080
     },
     "displayList": [
         {
             "type": "Image",
-            "id": "72f68b19-bcff-41e0-a468-adede87e8b61",
+            "id": "8ac1fa43-8435-4deb-9dc8-e384568ec554",
             "label": "splash_bg",
             "texture": {
                 "key": "splash-bg"
@@ -23,24 +20,10 @@
             "y": 540
         },
         {
-            "type": "Text",
-            "id": "2ce42443-5227-4c9b-b498-e81f9a21cde3",
-            "label": "progress",
-            "scope": "CLASS",
-            "components": [
-                "PreloadText"
-            ],
-            "x": 1075,
-            "y": 965,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "0%",
-            "fontSize": "54px"
-        },
-        {
             "type": "Image",
-            "id": "c3920538-4262-4c37-bc49-ac0df6060a69",
+            "id": "73996671-b9cf-4712-a9ed-02b4d917f95d",
             "label": "car_4",
+            "scope": "CLASS",
             "texture": {
                 "key": "car-4"
             },
@@ -49,7 +32,7 @@
         },
         {
             "type": "Image",
-            "id": "571c35b0-5e52-40bc-9a0c-b48f63acef8b",
+            "id": "46c8b437-8ef0-4c46-b8f0-5ef8fbfd8431",
             "label": "car_2",
             "texture": {
                 "key": "car-2"
@@ -62,7 +45,7 @@
         },
         {
             "type": "Image",
-            "id": "9b685c87-b684-4a36-af6d-56a4805a2757",
+            "id": "b5d1ac94-c4dc-4a7b-9d94-5e0d2ad1ec9a",
             "label": "logo",
             "texture": {
                 "key": "logo"

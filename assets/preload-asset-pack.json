@@ -15,6 +15,26 @@
                 "url": "assets/images/car-3.png",
                 "type": "image",
                 "key": "car-3"
+            },
+            {
+                "url": "assets/images/car-4.png",
+                "type": "image",
+                "key": "car-4"
+            },
+            {
+                "url": "assets/images/level-1-background.png",
+                "type": "image",
+                "key": "level-1-background"
+            },
+            {
+                "url": "assets/images/logo.png",
+                "type": "image",
+                "key": "logo"
+            },
+            {
+                "url": "assets/images/splash-bg.png",
+                "type": "image",
+                "key": "splash-bg"
             }
         ]
     },

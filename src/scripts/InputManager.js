@@ -9,7 +9,7 @@ class InputManager {
                     case 0:
                         car.setVelocity(0, -300);
                         break;
-                    case 180:
+                    case -180:
                         car.setVelocity(0, 300);
                         break;
                     case 90:
