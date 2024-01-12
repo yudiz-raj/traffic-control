@@ -31,17 +31,19 @@ class Preload extends Phaser.Scene {
 		progress.text = "0%";
 		progress.setStyle({ "fontSize": "54px" });
 
-		// car_4
-		this.add.image(1111, 624, "car-4");
-
 		// car_2
 		const car_2 = this.add.image(649, 462, "car-2");
 		car_2.scaleX = 2.5;
 		car_2.scaleY = 2.5;
 		car_2.angle = 90;
 
+		// car
+		const car = new Car(this, 1051, 595);
+		this.add.existing(car);
+
 		// logo
-		this.add.image(1101, 316, "logo");
+		const logo = new Logo(this, 889, 316);
+		this.add.existing(logo);
 
 		// progress (components)
 		new PreloadText(progress);

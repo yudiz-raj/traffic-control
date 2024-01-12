@@ -1,0 +1,95 @@
+{
+    "id": "095e83fa-9ba8-449c-bcfb-debd3aed0461",
+    "sceneType": "PREFAB",
+    "settings": {
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "f2dac1bb-79ae-432a-a6fe-6d5ba0eb058e",
+            "label": "container_2",
+            "x": -212,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "8b55ae7a-d1f7-439f-8306-195dcc73f01c",
+                    "label": "logo",
+                    "texture": {
+                        "key": "logo"
+                    },
+                    "x": 212
+                },
+                {
+                    "type": "Container",
+                    "id": "e10f3c04-2e75-43c3-93ca-8c46a94b920d",
+                    "label": "container_lights",
+                    "scope": "CLASS",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "1d8b8c6d-72c3-43a2-a839-3e7af9b9a01b",
+                            "label": "red_light",
+                            "texture": {
+                                "key": "red-light"
+                            },
+                            "x": -4,
+                            "y": 163
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2d46c854-98fe-4655-8aa8-7f400979dc76",
+                            "label": "red_light_4",
+                            "texture": {
+                                "key": "red-light"
+                            },
+                            "x": 129,
+                            "y": 166
+                        },
+                        {
+                            "type": "Image",
+                            "id": "398998f5-687d-4f35-9d4c-2594de891151",
+                            "label": "red_light_1",
+                            "texture": {
+                                "key": "red-light"
+                            },
+                            "x": 246,
+                            "y": 164
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f29a6414-bbee-46a1-9f17-84d10e49949a",
+                            "label": "red_light_3",
+                            "texture": {
+                                "key": "red-light"
+                            },
+                            "x": 374,
+                            "y": 164
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4853d188-b895-4836-9084-5e300717d16f",
+                            "label": "red_light_2",
+                            "texture": {
+                                "key": "red-light"
+                            },
+                            "x": 531,
+                            "y": 161
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

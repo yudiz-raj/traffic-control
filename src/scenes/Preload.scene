@@ -39,16 +39,6 @@
         },
         {
             "type": "Image",
-            "id": "c3920538-4262-4c37-bc49-ac0df6060a69",
-            "label": "car_4",
-            "texture": {
-                "key": "car-4"
-            },
-            "x": 1111,
-            "y": 624
-        },
-        {
-            "type": "Image",
             "id": "571c35b0-5e52-40bc-9a0c-b48f63acef8b",
             "label": "car_2",
             "texture": {
@@ -61,13 +51,25 @@
             "angle": 90
         },
         {
-            "type": "Image",
-            "id": "9b685c87-b684-4a36-af6d-56a4805a2757",
+            "prefabId": "2079d1f6-3a58-4de9-958b-6993fbaf362a",
+            "id": "bf4bb4a1-103e-4e4b-a515-508b1070e40c",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "car",
+            "x": 1051,
+            "y": 595
+        },
+        {
+            "prefabId": "095e83fa-9ba8-449c-bcfb-debd3aed0461",
+            "id": "f9a3cdda-50c7-43f5-827f-b423ace9b47a",
+            "unlock": [
+                "x",
+                "y"
+            ],
             "label": "logo",
-            "texture": {
-                "key": "logo"
-            },
-            "x": 1101,
+            "x": 889,
             "y": 316
         }
     ],
